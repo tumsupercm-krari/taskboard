@@ -1,0 +1,9 @@
+{
+  "name": "taskboard",
+  "version": "1.0.0",
+  "description": "Company to-do / kanban board with manager and staff roles",
+  "private": true,
+  "main": "server.js",
+  "scripts": { "start": "node --disable-warning=ExperimentalWarning server.js", "test": "node --disable-warning=ExperimentalWarning test/api.test.js && node --disable-warning=ExperimentalWarning test/demo.test.js" },
+  "engines": { "node": ">=22.5" }
+}
