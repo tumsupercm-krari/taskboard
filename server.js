@@ -614,7 +614,7 @@ setInterval(() => db.prepare('DELETE FROM sessions WHERE expires_at < ?').run(no
 
 // ---------- demo mode ----------
 let demoCfg = null;
-const demoInfo = () => ({ resetHours: demoCfg.resetHours, accounts: demoCfg.accounts });
+const demoInfo = () => ({ resetHours: demoCfg.resetHours, accounts: demoCfg.accounts, banner: process.env.DEMO_BANNER === '1' });
 function resetDemo() { demoData.resetAndSeed(db, hashPassword, demoCfg, TZ_OFFSET_MIN); writeHits.clear(); fails.clear(); }
 if (DEMO) {
   demoCfg = demoData.resolveConfig();

@@ -112,7 +112,7 @@
   const demoBanner = (demo) => h('div', { class: 'demo-banner', role: 'note', text: `เดโมสำหรับทดลอง ข้อมูลเป็นข้อมูลสมมติ รีเซ็ตทุก ${demo.resetHours} ชั่วโมง อย่ากรอกข้อมูลจริง` });
 
   async function boot() {
-    try { const st = await api('GET', '/api/state'); if (st.demo) $app.before(demoBanner(st.demo)); } catch { /* banner is optional */ }
+    try { const st = await api('GET', '/api/state'); if (st.demo && st.demo.banner) $app.before(demoBanner(st.demo)); } catch { /* banner is optional */ }
     try { state.me = (await api('GET', '/api/me')).user; } catch { state.me = null; }
     window.addEventListener('hashchange', render);
     render();
